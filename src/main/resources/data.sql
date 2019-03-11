@@ -1,0 +1,1 @@
+insert into mw_board (bd_title, bd_content,bd_writer_id, bd_writer_nm, write_date) values ('첫번째 생성글','이글은 재로딩시 H2 데이터베이스에 자동으로 생성되는 글입니다.','tester','테스터', CURRENT_TIMESTAMP())
