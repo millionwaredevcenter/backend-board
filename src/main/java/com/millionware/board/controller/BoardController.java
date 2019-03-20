@@ -7,6 +7,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -26,6 +28,13 @@ public class BoardController {
         List<Board> list = repo.findAll();
 
         return new ResponseEntity<List<Board>>(list, HttpStatus.OK);
+    }
+    
+   
+    @PostMapping
+    public ResponseEntity<Board> setBoard(@RequestBody Board board) {
+    	Board sb = repo.save(board);
+    	return new ResponseEntity<Board>(sb, HttpStatus.OK);
     }
 
 }
